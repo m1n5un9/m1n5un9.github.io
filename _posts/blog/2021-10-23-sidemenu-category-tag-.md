@@ -1,0 +1,165 @@
+---
+layout: single
+title : Github.io 블로그 사이드메뉴에 카테고리, 태그 추가
+categories: Blog
+tag: blog
+toc: true
+---
+
+
+
+사이드바를 구성하는 sidebar.html 에서 최상위 div 바로 안쪽에 아래와 같이 카테고리 리스트, 태그 리스트를 추가한다.
+
+# 카테고리 추가
+
+```html
+<div>
+  <div class="sidebar-nav-item">Category</div>
+  <nav class="content-ul">
+    {% for category in site.categories %}
+    <a href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}"
+       class="sidebar-nav-item pl-3rem">
+                          <span class="name">
+                              {{ category | first }}
+                          </span>
+      <span class="badge">{{ category | last | size }}</span>
+    </a>
+    {% endfor %}
+  </nav>
+</div>
+```
+
+
+
+# 태그추가
+
+```html
+<div>
+  <div class="sidebar-nav-item">Tags</div>
+  <div class="tags-cloud">
+    <div>
+      {% assign first = site.tags.first %}
+      {% assign max = first[1].size %}
+      {% assign min = max %}
+      {% for tag in site.tags offset:1 %}
+      {% if tag[1].size > max %}
+      {% assign max = tag[1].size %}
+      {% elsif tag[1].size < min %}
+      {% assign min = tag[1].size %}
+      {% endif %}
+      {% endfor %}
+
+      {% if max == min %}
+      {% assign diff = 1 %}
+      {% else %}
+      {% assign diff = max | minus: min %}
+      {% endif %}
+
+      {% for tag in site.tags %}
+      {% assign temp = tag[1].size | minus: min | times: 36 | divided_by: diff %}
+      {% assign base = temp | divided_by: 4 %}
+      {% assign remain = temp | modulo: 4 %}
+      {% if remain == 0 %}
+      {% assign size = base | plus: 9 %}
+      {% elsif remain == 1 or remain == 2 %}
+      {% assign size = base | plus: 9 | append: '.5' %}
+      {% else %}
+      {% assign size = base | plus: 10 %}
+      {% endif %}
+      {% if remain == 0 or remain == 1 %}
+      {% assign color = 9 | minus: base %}
+      {% else %}
+      {% assign color = 8 | minus: base %}
+      {% endif %}
+      <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag[0] }}" style="font-size: {{ size }}pt; color: #{{ 9 | minus: color }}{{ 9 | minus: color }}{{ 9 | minus: color }};">{{ tag[0] }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+```
+
+
+
+# 전체코드
+
+```html
+  <div class="sidebar sticky">
+  {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
+  {% if page.sidebar %}
+    {% for s in page.sidebar %}
+      {% if s.image %}
+        <img src="{{ s.image | relative_url }}"
+             alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+      {% endif %}
+      {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
+      {% if s.text %}{{ s.text | markdownify }}{% endif %}
+      {% if s.nav %}{% include nav_list nav=s.nav %}{% endif %}
+    {% endfor %}
+    {% if page.sidebar.nav %}
+      {% include nav_list nav=page.sidebar.nav %}
+    {% endif %}
+  {% endif %}
+  <div>
+    <div class="sidebar-nav-item">Category</div>
+    <nav class="content-ul">
+      {% for category in site.categories %}
+      <a href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}"
+         class="sidebar-nav-item pl-3rem">
+                            <span class="name">
+                                {{ category | first }}
+                            </span>
+        <span class="badge">{{ category | last | size }}</span>
+      </a>
+      {% endfor %}
+    </nav>
+  </div>
+  <div>
+    <div class="sidebar-nav-item">Tags</div>
+    <div class="tags-cloud">
+      <div>
+        {% assign first = site.tags.first %}
+        {% assign max = first[1].size %}
+        {% assign min = max %}
+        {% for tag in site.tags offset:1 %}
+        {% if tag[1].size > max %}
+        {% assign max = tag[1].size %}
+        {% elsif tag[1].size < min %}
+        {% assign min = tag[1].size %}
+        {% endif %}
+        {% endfor %}
+  
+        {% if max == min %}
+        {% assign diff = 1 %}
+        {% else %}
+        {% assign diff = max | minus: min %}
+        {% endif %}
+  
+        {% for tag in site.tags %}
+        {% assign temp = tag[1].size | minus: min | times: 36 | divided_by: diff %}
+        {% assign base = temp | divided_by: 4 %}
+        {% assign remain = temp | modulo: 4 %}
+        {% if remain == 0 %}
+        {% assign size = base | plus: 9 %}
+        {% elsif remain == 1 or remain == 2 %}
+        {% assign size = base | plus: 9 | append: '.5' %}
+        {% else %}
+        {% assign size = base | plus: 10 %}
+        {% endif %}
+        {% if remain == 0 or remain == 1 %}
+        {% assign color = 9 | minus: base %}
+        {% else %}
+        {% assign color = 8 | minus: base %}
+        {% endif %}
+        <a href="{{ root_url }}/{{ site.tag_dir }}#{{ tag[0] }}" style="font-size: {{ size }}pt; color: #{{ 9 | minus: color }}{{ 9 | minus: color }}{{ 9 | minus: color }};">{{ tag[0] }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>  
+</div>
+{% endif %}
+
+
+
+```
+
