@@ -3,6 +3,7 @@ layout: single
 title : Github.io 블로그 설정 A to Z
 categories: Blog
 tag: blog
+toc: true
 ---
 
 
@@ -15,8 +16,8 @@ tag: blog
 # 2. 미니멀미스테이크 포크
 
 1. https://github.com/mmistakes/minimal-mistakes
-2. 우상단 Fork클릭하여 Fork ![image-20211022232227942](../images/2021-10-22-blog_setup/image-20211022232227942.png)
-3. 내 레파지토리에 확인![image-20211022232251705](../images/2021-10-22-blog_setup/image-20211022232251705.png)
+2. 우상단 Fork클릭하여 Fork ![image-20211022232227942](../../images/2021-10-22-blog_setup/image-20211022232227942.png)
+3. 내 레파지토리에 확인![image-20211022232251705](../../images/2021-10-22-blog_setup/image-20211022232251705.png)
 4. 우측 중간에 Setting 클릭하고 Repository name을 `[git계정명].github.io` 로 변경
 
 # 3. Github Desktop 설치
@@ -35,9 +36,9 @@ tag: blog
 
 3. 실행후 로그인,
 
-4. 초기화면에서 Your repositories => [깃허브유저명]/[깃허브유저명].github.io 선택 => Clone!![image-20211022232513075](../images/2021-10-22-blog_setup/image-20211022232513075.png)
+4. 초기화면에서 Your repositories => [깃허브유저명]/[깃허브유저명].github.io 선택 => Clone!![image-20211022232513075](../../images/2021-10-22-blog_setup/image-20211022232513075.png)
 
-5. 내 프로젝트만 쓰겠다는 옵션 체크하면 끝![image-20211022232524762](../images/2021-10-22-blog_setup/image-20211022232524762.png)
+5. 내 프로젝트만 쓰겠다는 옵션 체크하면 끝![image-20211022232524762](../../images/2021-10-22-blog_setup/image-20211022232524762.png)
 
 # 4. Visual Studio Code 설치
 
@@ -47,9 +48,9 @@ tag: blog
 # 5. Typora 설치
 
 1. https://typora.io/ => Download
-2. 이미지 설정 : 파일=>환경설정=>이미지 => 체크박스 아래 그림과 같이 체크![image-20211022232539639](../images/2021-10-22-blog_setup/image-20211022232539639.png)
+2. 이미지 설정 : 파일=>환경설정=>이미지 => 체크박스 아래 그림과 같이 체크![image-20211022232539639](../../images/2021-10-22-blog_setup/image-20211022232539639.png)
 
-3. [파일]-[폴더열기]-[클론한 폴더/_posts]선택 ![image-20211022225856276](../images/2021-10-22-blog_setup/image-20211022225856276.png)
+3. [파일]-[폴더열기]-[클론한 폴더/_posts]선택 ![image-20211022225856276](../../images/2021-10-22-blog_setup/image-20211022225856276.png)
 
 
 
@@ -57,7 +58,7 @@ tag: blog
 
 1. typora에서 `날짜명-그외적을말.md` 로 저장
 
-2. Github desktop에서 `commit to master`=> `push origin`![image-20211022230156856](../images/2021-10-22-blog_setup/image-20211022230156856.png)
+2. Github desktop에서 `commit to master`=> `push origin`![image-20211022230156856](../../images/2021-10-22-blog_setup/image-20211022230156856.png)
 
    
 
@@ -94,7 +95,7 @@ tag: blog
    cd ~/m1n5un9.github.io
    ```
 
-   ![image-20211022231613586](../images/2021-10-22-blog_setup/image-20211022231613586.png)
+   ![image-20211022231613586](../../images/2021-10-22-blog_setup/image-20211022231613586.png)
 
 5. bundle설치 및 구동
 
@@ -104,7 +105,7 @@ tag: blog
    bundle exec jekyll serve
    ```
 
-6. 브라우저 열어서 `localhost:4000` 열기![image-20211022232058465](../images/2021-10-22-blog_setup/image-20211022232058465.png)
+6. 브라우저 열어서 `localhost:4000` 열기![image-20211022232058465](../../images/2021-10-22-blog_setup/image-20211022232058465.png)
 
 
 
@@ -114,7 +115,7 @@ tag: blog
 
 1. VS Code에서 _config.yml파일의 minimal_mistakes_skin 변경
 
-![image-20211022233055189](../images/2021-10-22-blog_setup/image-20211022233055189.png)
+![image-20211022233055189](../../images/2021-10-22-blog_setup/image-20211022233055189.png)
 
 2. 그외 설정 변경
 
@@ -145,7 +146,7 @@ breadcrumbs              : true # true, false (default)
 
 _config.ymldml - category_archive, jekyll-archives 주석해제
 
-![image-20211022233826954](../images/2021-10-22-blog_setup/image-20211022233826954.png)
+![image-20211022233826954](../../images/2021-10-22-blog_setup/image-20211022233826954.png)
 
 _pages/category-archive.md파일 생성 후 아래 내용작성
 
@@ -159,11 +160,11 @@ sidebar_main: true
 ---
 ```
 
-![image-20211022233943776](../images/2021-10-22-blog_setup/image-20211022233943776.png)
+![image-20211022233943776](../../images/2021-10-22-blog_setup/image-20211022233943776.png)
 
 _data/navigation.yml수정
 
-![image-20211022234044769](../images/2021-10-22-blog_setup/image-20211022234044769.png)
+![image-20211022234044769](../../images/2021-10-22-blog_setup/image-20211022234044769.png)
 
  게시물 상단에 카테고리 지정
 
@@ -177,7 +178,15 @@ categories: Blog
 
 서버 우측 Category 클릭하면 이렇게 게시물 카테고리별로 나옴
 
-![image-20211022234911989](../images/2021-10-22-blog_setup/image-20211022234911989.png)
+![image-20211022234911989](../../images/2021-10-22-blog_setup/image-20211022234911989.png)
+
+
+
+* **주의**
+
+  카테고리 설정후에 _post폴더 아래에 카테고리별로 하위폴더를 만들어서 게시글을 작성하자, 그리고 typora의 이미지 파일 저장 설정을 ../images에서 ../../images로 변경해주자
+
+  웹에 게시될때 카테고리에따라 URL경로가 하나 더생겨서 typora와 웹상의 이미지의 경로차이가 발생하기 때문에 실제 저장경로또한 한단계 하단으로 내려주는 것이다.
 
 
 
@@ -195,22 +204,31 @@ sidebar_main: true
 ---
 ```
 
-![image-20211022235330796](../images/2021-10-22-blog_setup/image-20211022235330796.png)
+![image-20211022235330796](../../images/2021-10-22-blog_setup/image-20211022235330796.png)
 
 _data/navigation.yml에 아래와 같이 추가
 
-![image-20211022235534515](../images/2021-10-22-blog_setup/image-20211022235534515.png)
+![image-20211022235534515](../../images/2021-10-22-blog_setup/image-20211022235534515.png)
 
 게시물에 상단에 Tag정보 추가
 
-![image-20211022235623431](../images/2021-10-22-blog_setup/image-20211022235623431.png)
+![image-20211022235623431](../../images/2021-10-22-blog_setup/image-20211022235623431.png)
 
 서버 재구동후 메뉴 에 Tag 추가됨
 
-![image-20211022235706879](../images/2021-10-22-blog_setup/image-20211022235706879.png)
+![image-20211022235706879](../../images/2021-10-22-blog_setup/image-20211022235706879.png)
 
 게시물에도 내용 추가됨
 
-![image-20211022235735502](../images/2021-10-22-blog_setup/image-20211022235735502.png)
+![image-20211022235735502](../../images/2021-10-22-blog_setup/image-20211022235735502.png)
 
 태그 여러개 달때는 대괄호로 감싸고 콤마로 구분하여 작성 ex `[blog, github, something]`
+
+## D. SEO 설정
+
+
+
+
+
+
+
