@@ -224,5 +224,23 @@ _data/navigation.yml에 아래와 같이 추가
 
 태그 여러개 달때는 대괄호로 감싸고 콤마로 구분하여 작성 ex `[blog, github, something]`
 
-## D. 검색 설정
+## D. 검색설정
+
+_pages/search.md 생성후 아래 내용 작성
+
+```markdown
+---
+title: Search
+layout: search
+permalink: /search/
+---
+```
+
+_data/navigation.yml파일에 main에 메뉴 추가
+
+![image-20211023012736738](../../images/2021-10-22-blog_setup/image-20211023012736738.png)
+
+확인
+
+![image-20211023012840474](../../images/2021-10-22-blog_setup/image-20211023012840474.png)
 
