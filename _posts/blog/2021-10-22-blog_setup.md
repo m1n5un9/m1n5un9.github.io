@@ -224,11 +224,5 @@ _data/navigation.yml에 아래와 같이 추가
 
 태그 여러개 달때는 대괄호로 감싸고 콤마로 구분하여 작성 ex `[blog, github, something]`
 
-## D. SEO 설정
-
-
-
-
-
-
+## D. 검색 설정
 
