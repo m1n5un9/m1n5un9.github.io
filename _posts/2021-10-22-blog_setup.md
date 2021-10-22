@@ -2,7 +2,7 @@
 layout: single
 title : Github.io 블로그 설정 A to Z
 categories: Blog
-tag: blogㅊ
+tag: blog
 ---
 
 
