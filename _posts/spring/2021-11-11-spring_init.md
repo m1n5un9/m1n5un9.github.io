@@ -1,7 +1,7 @@
 ---
 layout: single
 title : Spring boot + jpa 프로젝트 생성하기
-categories: ai
+categories: Spring
 tag: spring, boot, jpa
 toc: true
 
