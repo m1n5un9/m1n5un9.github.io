@@ -2,7 +2,7 @@
 layout: single
 title : Spring boot + jpa 프로젝트 생성하기
 categories: Spring
-tag: spring, boot, jpa
+tag: [spring, boot, jpa]
 toc: true
 
 ---

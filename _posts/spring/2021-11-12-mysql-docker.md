@@ -2,7 +2,7 @@
 layout: single
 title : Docker이미지로 Mysql 5.7 설치
 categories: Spring
-tag: docker, mysql
+tag: [docker, mysql]
 toc: true
 
 
