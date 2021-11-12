@@ -1,6 +1,6 @@
 ---
 layout: single
-title : Docker이미지로 Mysql 5.7 설치
+title : #2 Docker이미지로 Mysql 5.7 설치
 categories: Spring
 tag: [docker, mysql]
 toc: true
@@ -41,4 +41,12 @@ sudo docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password --name mysql-ws 
 
 ![image-20211112223916534](../../images/2021-11-12-mysql-docker/image-20211112223916534.png)
 
-![image-20211112223931778](../../images/2021-11-12-mysql-docker/image-20211112223931778.png)
+
+
+# 5. 사용할 DB Schema 생성
+
+- SCHEMAS아래에 우클릭하여 Create Schema클릭
+- Schema Name에 사용할 스키마 명 적고, 적용버튼 클릭
+
+![image-20211112233413681](../../images/2021-11-12-mysql-docker/image-20211112233413681.png)
+
